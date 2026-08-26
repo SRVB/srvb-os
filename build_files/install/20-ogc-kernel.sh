@@ -26,7 +26,7 @@ done
 
 kernel_rpms=()
 for package in kernel kernel-core kernel-modules kernel-devel kernel-devel-matched; do
-	rpm_path="$(find "${OGC_KERNEL_DIR}" -maxdepth 1 -type f -name "${package}-*.rpm" -print -quit)"
+	rpm_path="$(find "${OGC_KERNEL_DIR}" -maxdepth 1 -type f -name "${package}-[0-9]*.rpm" -print -quit)"
 	if [[ -z "${rpm_path}" ]]; then
 		echo "The OGC OCI artifact is missing ${package}" >&2
 		exit 1
