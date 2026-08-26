@@ -4,8 +4,25 @@ set -euo pipefail
 
 dnf5 install -y \
 	dnf5-plugins \
+	distrobox \
 	fish \
+	flatpak \
+	fuse \
+	fuse-libs \
+	bluez \
+	btrfs-progs \
+	cryptsetup \
+	fwupd \
 	glibc-all-langpacks \
 	langpacks-de \
 	langpacks-en \
-	unzip
+	NetworkManager \
+	pipewire \
+	pipewire-pulseaudio \
+	polkit \
+	power-profiles-daemon \
+	udisks2 \
+	wireplumber \
+	xdg-user-dirs
+
+flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo

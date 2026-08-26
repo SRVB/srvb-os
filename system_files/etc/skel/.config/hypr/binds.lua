@@ -9,6 +9,7 @@ hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 hl.bind(mainMod .. "+Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. "+E", hl.dsp.exec_cmd("nautilus"))
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --raw | swappy -f -"))
 
 -- Media keys
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))

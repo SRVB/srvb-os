@@ -6,7 +6,10 @@ set -euo pipefail
 
 dnf5 install -y \
 	kitty \
-	nautilus
+	nautilus \
+	swappy \
+	unzip \
+	wl-clipboard
 
 curl --retry 3 -fsSL https://starship.rs/install.sh | sh -s -- \
 	--yes \

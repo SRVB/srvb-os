@@ -11,11 +11,16 @@ dnf5 install -y \
 	--exclude=wofi \
 	--exclude=nwg-panel \
 	greetd \
+	gnome-keyring \
+	gnome-keyring-pam \
 	noctalia-git \
 	noctalia-greeter \
 	matugen \
 	hyprland \
 	hyprland-guiutils \
+	hyprshot \
+	xdg-desktop-portal \
+	xdg-desktop-portal-hyprland \
 	xkeyboard-config
 
 systemctl enable greetd.service

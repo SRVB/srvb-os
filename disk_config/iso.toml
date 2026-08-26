@@ -6,6 +6,16 @@ keyboard --xlayouts=us,de --switch=grp:alt_shift_toggle
 %post
 bootc switch --mutate-in-place --transport registry git.srvb.at/srvb/hyprfreeze:latest
 
+flatpak install --system --noninteractive flathub \
+  io.github.kolunmi.Bazaar \
+  app.zen_browser.zen \
+  org.gnome.baobab \
+  org.gnome.Calculator \
+  org.gnome.gitlab.somas.Apostrophe \
+  org.gnome.Loupe \
+  org.gnome.Papers \
+  app.drey.KeyRack
+
 # Anaconda writes a "/" line into /etc/fstab, but composefs (used by bootc)
 # rejects the remount systemd-remount-fs.service tries to apply from it at
 # every boot (mount: /: fsconfig ... overlay: No changes allowed in
