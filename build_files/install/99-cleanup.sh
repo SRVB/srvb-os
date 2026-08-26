@@ -3,11 +3,12 @@
 set -euo pipefail
 
 echo "Cleaning up build-only packages and unused dependencies..."
-dnf5 remove -y --autoremove \
+dnf5 remove -y \
 	akmod-nvidia \
 	akmods \
 	kernel-devel \
 	kernel-devel-matched
+dnf5 autoremove -y
 
 echo "Cleaning package manager caches and temp files..."
 dnf5 clean all
