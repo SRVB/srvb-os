@@ -10,7 +10,7 @@ packages=(
     nvidia-modprobe
     nvidia-persistenced
     nvidia-settings
-    xorg-x11-drv-nvidia-libs.i686
+    nvidia-driver-libs.i686
 )
 
 KVER="$(ls /usr/lib/modules | head -n1)"
