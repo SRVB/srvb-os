@@ -7,16 +7,16 @@ dnf5 config-manager addrepo --from-repofile="https://copr.fedorainfracloud.org/c
 dnf5 config-manager setopt copr:copr.fedorainfracloud.org:lionheartp:Hyprland.enabled=0
 
 dnf5 install -y \
-    --enablerepo=copr:copr.fedorainfracloud.org:lionheartp:Hyprland \
-    --exclude=wofi \
-    --exclude=nwg-panel \
-    greetd \
-    noctalia-git \
-    noctalia-greeter \
-    matugen \
-    hyprland \
-    hyprland-guiutils \
-    xkeyboard-config
+	--enablerepo=copr:copr.fedorainfracloud.org:lionheartp:Hyprland \
+	--exclude=wofi \
+	--exclude=nwg-panel \
+	greetd \
+	noctalia-git \
+	noctalia-greeter \
+	matugen \
+	hyprland \
+	hyprland-guiutils \
+	xkeyboard-config
 
 systemctl enable greetd.service
 systemctl set-default graphical.target

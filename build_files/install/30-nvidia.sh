@@ -3,14 +3,14 @@
 set -ouex pipefail
 
 packages=(
-    nvidia-driver-cuda
-    libnvidia-fbc
-    libva-nvidia-driver
-    nvidia-driver
-    nvidia-modprobe
-    nvidia-persistenced
-    nvidia-settings
-    nvidia-driver-libs.i686
+	nvidia-driver-cuda
+	libnvidia-fbc
+	libva-nvidia-driver
+	nvidia-driver
+	nvidia-modprobe
+	nvidia-persistenced
+	nvidia-settings
+	nvidia-driver-libs.i686
 )
 
 KVER="$(ls /usr/lib/modules | head -n1)"

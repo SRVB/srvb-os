@@ -16,8 +16,8 @@ podman artifact extract "${OGC_KERNEL_IMAGE}" "${OGC_KERNEL_DIR}"
 
 for package in kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-devel kernel-devel-matched; do
 	mapfile -t installed_packages < <(
-		rpm -qa --qf '%{NAME} %{NEVRA}\n' \
-		| awk -v package="${package}" '$1 == package { print $2 }'
+		rpm -qa --qf '%{NAME} %{NEVRA}\n' |
+			awk -v package="${package}" '$1 == package { print $2 }'
 	)
 	for installed_package in "${installed_packages[@]}"; do
 		rpm --erase --nodeps "${installed_package}"
