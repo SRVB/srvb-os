@@ -10,17 +10,12 @@ dnf5 install -y \
     --enablerepo=copr:copr.fedorainfracloud.org:lionheartp:Hyprland \
     --exclude=wofi \
     --exclude=nwg-panel \
-    glibc-all-langpacks \
     greetd \
-    langpacks-de \
-    langpacks-en \
     noctalia-git \
     noctalia-greeter \
     matugen \
     hyprland \
     hyprland-guiutils \
-    kitty \
-    nautilus \
     xkeyboard-config
 
 systemctl enable greetd.service
