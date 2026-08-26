@@ -5,6 +5,13 @@ set -ouex pipefail
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
 
+### Install system-wide components
+
+for installer in /ctx/install/*.sh; do
+	printf 'Running %s\n' "${installer}"
+	bash "${installer}"
+done
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
