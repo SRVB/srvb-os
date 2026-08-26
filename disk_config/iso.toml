@@ -4,7 +4,7 @@ timezone Europe/Vienna --utc
 keyboard --xlayouts=us,de --switch=grp:alt_shift_toggle
 
 %post
-bootc switch --mutate-in-place --transport registry git.srvb.at/srvb/hyprfreeze:latest
+bootc switch --mutate-in-place --transport registry ghcr.io/srvb/srvb-os:latest
 
 flatpak install --system --noninteractive flathub \
   io.github.kolunmi.Bazaar \
