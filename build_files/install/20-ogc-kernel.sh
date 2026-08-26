@@ -34,4 +34,4 @@ for package in kernel kernel-core kernel-modules kernel-devel kernel-devel-match
 	kernel_rpms+=("${rpm_path}")
 done
 
-dnf5 install -y --setopt=install_weak_deps=False "${kernel_rpms[@]}"
+KERNEL_INSTALL_DISABLE=1 dnf5 install -y --setopt=install_weak_deps=False "${kernel_rpms[@]}"
