@@ -7,7 +7,8 @@ cp -avf "/ctx/system_files"/. /
 
 ### Install system-wide components
 
-for installer in /ctx/install/*.sh; do
+mapfile -t installers < <(find /ctx/install -maxdepth 1 -name '*.sh' | LC_ALL=C sort -V)
+for installer in "${installers[@]}"; do
 	printf 'Running %s\n' "${installer}"
 	bash "${installer}"
 done

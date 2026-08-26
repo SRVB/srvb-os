@@ -14,7 +14,7 @@ fi
 podman artifact pull --quiet "${OGC_KERNEL_IMAGE}"
 podman artifact extract "${OGC_KERNEL_IMAGE}" "${OGC_KERNEL_DIR}"
 
-for package in kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt; do
+for package in kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-devel kernel-devel-matched; do
 	mapfile -t installed_packages < <(
 		rpm -qa --qf '%{NAME} %{NEVRA}\n' \
 		| awk -v package="${package}" '$1 == package { print $2 }'
@@ -25,7 +25,7 @@ for package in kernel kernel-core kernel-modules kernel-modules-core kernel-uki-
 done
 
 kernel_rpms=()
-for package in kernel kernel-core kernel-modules; do
+for package in kernel kernel-core kernel-modules kernel-devel kernel-devel-matched; do
 	rpm_path="$(find "${OGC_KERNEL_DIR}" -maxdepth 1 -type f -name "${package}-*.rpm" -print -quit)"
 	if [[ -z "${rpm_path}" ]]; then
 		echo "The OGC OCI artifact is missing ${package}" >&2
