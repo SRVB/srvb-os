@@ -16,6 +16,7 @@ dnf5 install -y \
 	glibc-all-langpacks \
 	langpacks-de \
 	langpacks-en \
+	grub2-tools \
 	NetworkManager \
 	pipewire \
 	pipewire-pulseaudio \

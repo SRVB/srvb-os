@@ -7,9 +7,6 @@ cp -avf "/ctx/system_files"/. /
 
 install -Dm644 /ctx/logo.png /usr/share/plymouth/themes/srvb/logo.png
 
-sed -i '/^GRUB_GFXMODE=/d' /etc/default/grub
-echo 'GRUB_GFXMODE=auto' >> /etc/default/grub
-
 ### Install system-wide components
 
 mapfile -t installers < <(find /ctx/install -maxdepth 1 -name '*.sh' | LC_ALL=C sort -V)
