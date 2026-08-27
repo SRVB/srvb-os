@@ -55,7 +55,4 @@ require("rules-layer")
 require("rules-windows")
 require("rules-workspace")
 require("inputs")
--- require("hyprbars")
 
--- hyprmon: managed monitor profile include
-require("hyprmon")
