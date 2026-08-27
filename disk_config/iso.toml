@@ -14,7 +14,8 @@ flatpak install --system --noninteractive flathub \
   org.gnome.gitlab.somas.Apostrophe \
   org.gnome.Loupe \
   org.gnome.Papers \
-  app.drey.KeyRack
+  app.drey.KeyRack \
+  org.gnome.TextEditor
 
 # Anaconda writes a "/" line into /etc/fstab, but composefs (used by bootc)
 # rejects the remount systemd-remount-fs.service tries to apply from it at
