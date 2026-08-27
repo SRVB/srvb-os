@@ -25,7 +25,7 @@ dnf5 install -y \
 	steam \
 	steam-devices \
 	swappy \
-	terra-gamescope \
+	gamescope \
 	ublue-os-media-automount-udev \
 	unzip \
 	vkBasalt \
