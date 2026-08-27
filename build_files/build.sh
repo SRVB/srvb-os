@@ -4,7 +4,11 @@ set -ouex pipefail
 
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
+
 install -Dm644 /ctx/logo.png /usr/share/plymouth/themes/srvb/logo.png
+
+sed -i '/^GRUB_GFXMODE=/d' /etc/default/grub
+echo 'GRUB_GFXMODE=auto' >> /etc/default/grub
 
 ### Install system-wide components
 

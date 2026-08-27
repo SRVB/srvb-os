@@ -6,32 +6,13 @@ logo.image = logo.original_image.Scale(240, 240);
 logo.sprite = Sprite(logo.image);
 logo.sprite.SetPosition(
     Window.GetX() + Window.GetWidth() / 2 - logo.image.GetWidth() / 2,
-    Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2 - 24,
+    Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2,
     0
-);
-
-indicator.image = Image.Text("Loading...", 0.80, 0.86, 0.94);
-indicator.sprite = Sprite(indicator.image);
-indicator.sprite.SetPosition(
-    Window.GetX() + Window.GetWidth() / 2 - indicator.image.GetWidth() / 2,
-    Window.GetY() + Window.GetHeight() / 2 + logo.image.GetHeight() / 2 + 12,
-    1
 );
 
 fun refresh_callback() {
     logo.sprite.SetX(Window.GetX() + Window.GetWidth() / 2 - logo.image.GetWidth() / 2);
-    logo.sprite.SetY(Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2 - 24);
-    indicator.sprite.SetX(Window.GetX() + Window.GetWidth() / 2 - indicator.image.GetWidth() / 2);
-    indicator.sprite.SetY(Window.GetY() + Window.GetHeight() / 2 + logo.image.GetHeight() / 2 + 12);
+    logo.sprite.SetY(Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2);
 }
 
 Plymouth.SetRefreshFunction(refresh_callback);
-
-fun progress_callback(duration, progress) {
-    indicator.percent = Math.Int(progress * 100);
-    indicator.image = Image.Text("Loading " + indicator.percent + "%", 0.80, 0.86, 0.94);
-    indicator.sprite.SetImage(indicator.image);
-    indicator.sprite.SetX(Window.GetX() + Window.GetWidth() / 2 - indicator.image.GetWidth() / 2);
-}
-
-Plymouth.SetBootProgressFunction(progress_callback);
