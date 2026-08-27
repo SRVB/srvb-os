@@ -55,4 +55,4 @@ fc-cache -f "${font_dir}"
 useradd -D --shell /usr/bin/fish
 
 systemctl enable ublue-os-media-automount.service
-systemctl enable hyprmoncfgd.service
+systemctl --global --user enable hyprmoncfgd.service
