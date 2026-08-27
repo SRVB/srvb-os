@@ -19,6 +19,38 @@ local terminals = "^(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]
 hl.window_rule({ match = { class = "^(firefox|zen)$" }, opacity = "1.0 override" })
 hl.window_rule({ match = { class = terminals }, opacity = "1.0 override" }) -- Override opacity in favor of terminal settings for opacity. If your terminal doesn't support transparency, you can remove this rule.
 
+-- Gaming
+hl.window_rule({
+    match = { content = "game" },
+    immediate = true,
+    idle_inhibit = "fullscreen",
+    no_anim = true,
+    no_blur = true,
+    no_shadow = true,
+    border_size = 0,
+    rounding = 0,
+})
+
+hl.window_rule({
+    match = { xwayland = true, fullscreen = true },
+    immediate = true,
+    idle_inhibit = "fullscreen",
+    no_anim = true,
+    no_blur = true,
+    no_shadow = true,
+    border_size = 0,
+    rounding = 0,
+})
+
+hl.window_rule({
+    match = { fullscreen = true },
+    no_anim = true,
+    no_blur = true,
+    no_shadow = true,
+    border_size = 0,
+    rounding = 0,
+})
+
 -- Fix some dragging issues with XWayland
 hl.window_rule({
     name     = "fix-xwayland-drags",
