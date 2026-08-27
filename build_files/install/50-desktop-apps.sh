@@ -14,6 +14,7 @@ dnf5 install -y \
 	--enablerepo=copr:copr.fedorainfracloud.org:ublue-os:packages \
 	--enablerepo=terra \
 	gamemode \
+	bootc-gtk \
 	gnome-disk-utility \
 	kitty \
 	libFAudio \
