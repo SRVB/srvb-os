@@ -21,7 +21,9 @@ dnf5 install -y \
 	hyprshot \
 	xdg-desktop-portal \
 	xdg-desktop-portal-hyprland \
-	xkeyboard-config
+	xkeyboard-config \
+	adw-gtk3-theme \
+	qt6ct
 
 systemctl enable greetd.service
 systemctl set-default graphical.target
