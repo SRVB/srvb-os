@@ -27,7 +27,7 @@ dnf5 install -y \
 	openxr \
 	steam \
 	steam-devices \
-	swappy \
+	satty \
 	gamescope \
 	hyprmoncfg \
 	ublue-os-media-automount-udev \
