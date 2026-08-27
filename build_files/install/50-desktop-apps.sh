@@ -17,7 +17,6 @@ dnf5 install -y \
 	--enablerepo=copr:copr.fedorainfracloud.org:paolino:hyprmoncfg \
 	--enablerepo=terra \
 	gamemode \
-	bootc-gtk \
 	gnome-disk-utility \
 	kitty \
 	libFAudio \

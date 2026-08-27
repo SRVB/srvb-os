@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Display Settings
-Comment=Configure Hyprland monitor layouts
-Exec=kitty --start-as fullscreen sh -lc 'exec hyprmoncfg --monitors-conf .config/hypr/monitors.lua --hypr-config .config/hypr/hyprland.lua'
-Icon=preferences-desktop-display
-Categories=Settings;HardwareSettings;
-Terminal=false
