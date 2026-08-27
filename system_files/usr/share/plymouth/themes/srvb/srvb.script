@@ -1,0 +1,38 @@
+Window.SetBackgroundTopColor(0.012, 0.024, 0.055);
+Window.SetBackgroundBottomColor(0.012, 0.024, 0.055);
+
+logo.original_image = Image("logo.png");
+logo.image = logo.original_image.Scale(240, 240);
+logo.sprite = Sprite(logo.image);
+
+indicator.sprite = Sprite();
+indicator.tick = 0;
+indicator.frame = 0;
+
+fun refresh_callback() {
+    logo.sprite.SetX(Window.GetX() + Window.GetWidth() / 2 - logo.image.GetWidth() / 2);
+    logo.sprite.SetY(Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2 - 24);
+
+    indicator.tick++;
+    if (indicator.tick >= 20) {
+        indicator.tick = 0;
+        indicator.frame++;
+        if (indicator.frame > 3)
+            indicator.frame = 0;
+    }
+
+    if (indicator.frame == 0)
+        indicator.image = Image.Text("Loading", 0.80, 0.86, 0.94);
+    if (indicator.frame == 1)
+        indicator.image = Image.Text("Loading.", 0.80, 0.86, 0.94);
+    if (indicator.frame == 2)
+        indicator.image = Image.Text("Loading..", 0.80, 0.86, 0.94);
+    if (indicator.frame == 3)
+        indicator.image = Image.Text("Loading...", 0.80, 0.86, 0.94);
+
+    indicator.sprite.SetImage(indicator.image);
+    indicator.sprite.SetX(Window.GetX() + Window.GetWidth() / 2 - indicator.image.GetWidth() / 2);
+    indicator.sprite.SetY(Window.GetY() + Window.GetHeight() / 2 + logo.image.GetHeight() / 2 + 12);
+}
+
+Plymouth.SetRefreshFunction(refresh_callback);

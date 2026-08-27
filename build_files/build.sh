@@ -4,6 +4,7 @@ set -ouex pipefail
 
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
+install -Dm644 /ctx/logo.png /usr/share/plymouth/themes/srvb/logo.png
 
 ### Install system-wide components
 

@@ -19,10 +19,14 @@ dnf5 install -y \
 	NetworkManager \
 	pipewire \
 	pipewire-pulseaudio \
+	plymouth \
+	plymouth-plugin-script \
 	polkit \
 	power-profiles-daemon \
 	udisks2 \
 	wireplumber \
 	xdg-user-dirs
+
+plymouth-set-default-theme -R srvb
 
 flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo

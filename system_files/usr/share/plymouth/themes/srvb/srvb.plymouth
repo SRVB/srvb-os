@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=SRVB
+Description=SRVB boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/srvb
+ScriptFile=/usr/share/plymouth/themes/srvb/srvb.script

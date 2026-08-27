@@ -2,6 +2,7 @@
 FROM scratch AS ctx
 COPY build_files /
 COPY system_files /system_files
+COPY logo.png /logo.png
 
 # Base Image
 FROM quay.io/fedora/fedora-bootc:latest
