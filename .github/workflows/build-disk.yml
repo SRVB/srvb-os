@@ -9,6 +9,7 @@ on:
       - main
     types:
       - completed
+  workflow_dispatch: {}
 
 env:
   IMAGE_NAME: ${{ github.event.repository.name }} # output of build.yml, keep in sync
@@ -23,24 +24,38 @@ concurrency:
 jobs:
   changes:
     name: Check disk configuration changes
-    if: github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     outputs:
-      disk_config: ${{ steps.changed-files.outputs.disk_config }}
+      disk_config: ${{ steps.result.outputs.disk_config }}
     steps:
       - name: Checkout associated commit
+        if: github.event_name != 'workflow_dispatch'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
-          fetch-depth: 2
+          fetch-depth: 0
 
+      # dorny/paths-filter resolves the correct diff range via the compare API,
+      # unlike a plain git diff-tree which only sees the latest commit.
       - name: Check changed files
-        id: changed-files
+        if: github.event_name != 'workflow_dispatch'
+        id: filter
+        uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
+        with:
+          base: ${{ github.event.workflow_run.head_branch }}
+          ref: ${{ github.event.workflow_run.head_sha }}
+          filters: |
+            disk_config:
+              - 'disk_config/**'
+
+      - name: Determine result
+        id: result
         run: |
-          if git diff-tree --no-commit-id --name-only -r "${{ github.event.workflow_run.head_sha }}" | grep -q '^disk_config/'; then
-            echo 'disk_config=true' >> "${GITHUB_OUTPUT}"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "disk_config=true" >> "${GITHUB_OUTPUT}"
           else
-            echo 'disk_config=false' >> "${GITHUB_OUTPUT}"
+            echo "disk_config=${{ steps.filter.outputs.disk_config }}" >> "${GITHUB_OUTPUT}"
           fi
 
   build:
@@ -72,6 +87,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Build disk images
         id: build
