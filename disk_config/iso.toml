@@ -15,6 +15,13 @@ EOF
 flatpak install --system --noninteractive flathub \
   io.github.kolunmi.Bazaar \
   app.zen_browser.zen \
+  net.lutris.Lutris \
+  com.heroicgameslauncher.hgl \
+  com.discordapp.Discord \
+  com.obsproject.Studio \
+  org.libretro.RetroArch \
+  org.freedesktop.Piper \
+  org.openrgb.OpenRGB \
   org.gnome.baobab \
   org.gnome.Calculator \
   org.gnome.gitlab.somas.Apostrophe \
