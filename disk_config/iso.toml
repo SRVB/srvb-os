@@ -15,9 +15,6 @@ EOF
 flatpak install --system --noninteractive flathub \
   io.github.kolunmi.Bazaar \
   app.zen_browser.zen \
-  net.lutris.Lutris \
-  com.heroicgameslauncher.hgl \
-  com.obsproject.Studio \
   org.gnome.baobab \
   org.gnome.Calculator \
   org.gnome.gitlab.somas.Apostrophe \
@@ -30,12 +27,12 @@ flatpak install --system --noninteractive flathub \
   it.mijorus.gearlever
 
 
-# Anaconda writes a "/" line into /etc/fstab, but composefs (used by bootc)
-# rejects the remount systemd-remount-fs.service tries to apply from it at
-# every boot (mount: /: fsconfig ... overlay: No changes allowed in
-# reconfigure). Drop just that line, keep /boot, /boot/efi, swap, etc.
-# See: https://github.com/bootc-dev/bootc/issues/971
-awk '$2 != "/"' /etc/fstab > /etc/fstab.new && mv /etc/fstab.new /etc/fstab
+## Anaconda writes a "/" line into /etc/fstab, but composefs (used by bootc)
+## rejects the remount systemd-remount-fs.service tries to apply from it at
+## every boot (mount: /: fsconfig ... overlay: No changes allowed in
+## reconfigure). Drop just that line, keep /boot, /boot/efi, swap, etc.
+## See: https://github.com/bootc-dev/bootc/issues/971
+#awk '$2 != "/"' /etc/fstab > /etc/fstab.new && mv /etc/fstab.new /etc/fstab
 %end
 """
 

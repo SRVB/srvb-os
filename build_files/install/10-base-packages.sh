@@ -12,8 +12,6 @@ dnf5 install -y \
 	bluez \
 	btrfs-progs \
 	cryptsetup \
-	firewalld \
-	firewall-config \
 	fwupd \
 	glibc-all-langpacks \
 	langpacks-de \
