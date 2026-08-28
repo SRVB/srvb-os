@@ -8,9 +8,12 @@ var uwsmCachedDesktopActionPrefixes = [
     "org.freedesktop.hostname1.",
     "org.freedesktop.locale1.",
     "org.freedesktop.packagekit.",
+    "org.freedesktop.policykit.exec",
+    "org.freedesktop.systemd1.",
     "org.freedesktop.timedate1.",
     "org.freedesktop.udisks2.",
     "org.freedesktop.upower.",
+    "io.systemd.",
 ];
 
 polkit.addRule(function(action, subject) {

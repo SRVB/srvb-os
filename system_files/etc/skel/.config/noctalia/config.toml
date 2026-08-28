@@ -81,6 +81,7 @@ polkit_agent = true
 
     [shell.greeter_sync]
     auto_sync = true
+    privilege_command = "pkexec"
 
     [shell.keyboard_layout.custom_labels]
     "German (no dead keys)" = "de"
