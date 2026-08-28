@@ -13,10 +13,11 @@ polkit.addRule(function(action, subject) {
     }
 
     if (action.id == "org.freedesktop.systemd1.manage-units") {
-        const unit = String(action.lookup("unit") || action.lookupPath || "").toLowerCase();
-        const verb = String(action.lookup("verb") || "").toLowerCase();
-        const isNoctaliaGreeter = unit.includes("noctalia") && unit.includes("greeter");
-        const allowedVerb = ["start", "stop", "restart", "reload", "try-restart"].includes(verb);
+        var unit = String(action.lookup("unit") || action.lookupPath || "").toLowerCase();
+        var verb = String(action.lookup("verb") || "").toLowerCase();
+        var isNoctaliaGreeter = unit.indexOf("noctalia") !== -1 && unit.indexOf("greeter") !== -1;
+        var allowedVerbs = ["start", "stop", "restart", "reload", "try-restart"];
+        var allowedVerb = allowedVerbs.indexOf(verb) !== -1;
 
         if (isNoctaliaGreeter && allowedVerb) {
             return polkit.Result.YES;
