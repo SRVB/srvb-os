@@ -15,10 +15,6 @@ if loadfont $prefix/fonts/FiraCodeNerdFont.pf2; then
   set gfxmode=auto
   set gfxpayload=keep
   terminal_output gfxterm
-  set color_normal=white/#03060e
-  set color_highlight=#03060e/white
-  set menu_color_normal=white/#03060e
-  set menu_color_highlight=#03060e/white
 fi
 EOF
 
