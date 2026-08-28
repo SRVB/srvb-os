@@ -27,7 +27,7 @@ oder aktualisiert werden.
 - NetworkManager, Bluetooth, fwupd und Power Profiles
 - NVIDIA-Unterstützung über die vorbereiteten Kernel- und Dracut-Konfigurationen
 - Vorinstallierte Flatpak-Anbindung mit Flathub
-- Zusätzliche Gaming-/Daily-Driver-Flatpaks (u. a. Lutris, Heroic, Discord, OBS, RetroArch, Piper, OpenRGB)
+- Zusätzliche Gaming-/Daily-Driver-Flatpaks (u. a. Lutris, Heroic, OBS)
 - SRVB Plymouth-Boot-Splash mit `logo.png`
 - Standardkonfigurationen für Hyprland und Noctalia in `/etc/skel`
 
