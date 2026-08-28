@@ -1,0 +1,28 @@
+// UWSM starts many desktop clients through the systemd user manager. Some
+// upstream policies only request one-shot admin authentication there, so keep
+// common interactive desktop authorizations cached for local wheel users.
+const uwsmCachedDesktopActionPrefixes = [
+    "org.freedesktop.Flatpak.",
+    "org.freedesktop.NetworkManager.",
+    "org.freedesktop.fwupd.",
+    "org.freedesktop.hostname1.",
+    "org.freedesktop.locale1.",
+    "org.freedesktop.packagekit.",
+    "org.freedesktop.timedate1.",
+    "org.freedesktop.udisks2.",
+    "org.freedesktop.upower.",
+];
+
+polkit.addRule(function(action, subject) {
+    if (!subject.active || !subject.local || !subject.isInGroup("wheel")) {
+        return polkit.Result.NOT_HANDLED;
+    }
+
+    if (uwsmCachedDesktopActionPrefixes.some(function(actionPrefix) {
+        return action.id.indexOf(actionPrefix) === 0;
+    })) {
+        return polkit.Result.AUTH_ADMIN_KEEP;
+    }
+
+    return polkit.Result.NOT_HANDLED;
+});
