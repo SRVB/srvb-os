@@ -1,0 +1,8 @@
+// action id is bound to noctalia-greeter-apply-appearance via the package's
+// exec.path policykit annotation, so pkexec refuses any other program here.
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.noctalia.greeter.apply-appearance" &&
+        subject.active && subject.local && subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});
