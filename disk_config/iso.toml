@@ -6,16 +6,10 @@ keyboard --xlayouts=us,de --switch=grp:alt_shift_toggle
 %post --erroronfail
 bootc switch --mutate-in-place --transport registry ghcr.io/srvb/srvb-os:latest
 
-font_path="$(find /usr/share/fonts/FiraCode -type f -name 'FiraCodeNerdFont-Regular.ttf' -print -quit)"
-test -n "${font_path}"
-install -d /boot/grub2/fonts
-grub2-mkfont -s 24 -o /boot/grub2/fonts/FiraCodeNerdFont.pf2 "${font_path}"
 install -Dm644 /dev/stdin /boot/grub2/custom.cfg <<'EOF'
-if loadfont $prefix/fonts/FiraCodeNerdFont.pf2; then
-  set gfxmode=auto
-  set gfxpayload=keep
-  terminal_output gfxterm
-fi
+set gfxmode=auto
+set gfxpayload=keep
+terminal_output gfxterm
 EOF
 
 flatpak install --system --noninteractive flathub \
@@ -26,8 +20,12 @@ flatpak install --system --noninteractive flathub \
   org.gnome.gitlab.somas.Apostrophe \
   org.gnome.Loupe \
   org.gnome.Papers \
+  com.usebottles.bottles \
   app.drey.KeyRack \
-  org.gnome.TextEditor
+  org.gnome.TextEditor \
+  com.github.tchx84.Flatseal \
+  it.mijorus.gearlever
+
 
 # Anaconda writes a "/" line into /etc/fstab, but composefs (used by bootc)
 # rejects the remount systemd-remount-fs.service tries to apply from it at
