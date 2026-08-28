@@ -1,8 +1,26 @@
-// action id is bound to noctalia-greeter-apply-appearance via the package's
-// exec.path policykit annotation, so pkexec refuses any other program here.
+// Keep this policy as narrow as possible: a local wheel user may authenticate for
+// the greeter-specific action and for the specific Noctalia greeter systemd unit
+// that is managed from the UWSM session. This matches the Polkit best-practice of
+// allowing only the exact action and exact unit instead of a blanket manage-units rule.
 polkit.addRule(function(action, subject) {
-    if (action.id == "org.noctalia.greeter.apply-appearance" &&
-        subject.active && subject.local && subject.isInGroup("wheel")) {
+    if (!subject.active || !subject.local || !subject.isInGroup("wheel")) {
+        return polkit.Result.NOT_HANDLED;
+    }
+
+    if (action.id == "org.noctalia.greeter.apply-appearance") {
         return polkit.Result.YES;
     }
+
+    if (action.id == "org.freedesktop.systemd1.manage-units") {
+        const unit = String(action.lookup("unit") || action.lookupPath || "").toLowerCase();
+        const verb = String(action.lookup("verb") || "").toLowerCase();
+        const isNoctaliaGreeter = unit.includes("noctalia") && unit.includes("greeter");
+        const allowedVerb = ["start", "stop", "restart", "reload", "try-restart"].includes(verb);
+
+        if (isNoctaliaGreeter && allowedVerb) {
+            return polkit.Result.YES;
+        }
+    }
+
+    return polkit.Result.NOT_HANDLED;
 });
