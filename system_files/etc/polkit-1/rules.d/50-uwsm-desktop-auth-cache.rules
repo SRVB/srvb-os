@@ -14,7 +14,7 @@ var uwsmCachedDesktopActionPrefixes = [
 ];
 
 polkit.addRule(function(action, subject) {
-    if (!subject.active || !subject.local || !subject.isInGroup("wheel")) {
+    if (!subject.local || !subject.isInGroup("wheel")) {
         return polkit.Result.NOT_HANDLED;
     }
 
