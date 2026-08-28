@@ -75,10 +75,7 @@ community_palette = "Aura"
     builtin_ids = [ "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
 
 [wallpaper.default]
-path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
-
-[wallpaper.last]
-path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+path = "/usr/share/srvb/wallpaper.png"
 
 [widget.taskbar]
 pinned = [ "org.gnome.Nautilus", "kitty", "io.github.kolunmi.Bazaar", "app.zen_browser.zen" ]
