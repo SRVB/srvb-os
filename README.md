@@ -24,9 +24,10 @@ oder aktualisiert werden.
 - Noctalia Shell und Noctalia Greeter
 - greetd für die Anmeldung
 - PipeWire und WirePlumber für Audio
-- NetworkManager, Bluetooth, fwupd und Power Profiles
+- NetworkManager, Bluetooth, firewalld (+ firewall-config), fwupd und Power Profiles
 - NVIDIA-Unterstützung über die vorbereiteten Kernel- und Dracut-Konfigurationen
 - Vorinstallierte Flatpak-Anbindung mit Flathub
+- Zusätzliche Gaming-/Daily-Driver-Flatpaks (u. a. Lutris, Heroic, OBS)
 - SRVB Plymouth-Boot-Splash mit `logo.png`
 - Standardkonfigurationen für Hyprland und Noctalia in `/etc/skel`
 

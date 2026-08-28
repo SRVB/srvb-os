@@ -15,6 +15,9 @@ EOF
 flatpak install --system --noninteractive flathub \
   io.github.kolunmi.Bazaar \
   app.zen_browser.zen \
+  net.lutris.Lutris \
+  com.heroicgameslauncher.hgl \
+  com.obsproject.Studio \
   org.gnome.baobab \
   org.gnome.Calculator \
   org.gnome.gitlab.somas.Apostrophe \
