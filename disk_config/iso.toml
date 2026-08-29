@@ -36,6 +36,11 @@ flatpak install --system --noninteractive flathub \
 %end
 """
 
+[customizations.iso]
+volume_id = "SRVB-OS"
+application_id = "SRVB-OS"
+publisher = "srvb"
+
 [customizations.installer.modules]
 enable = [
   "org.fedoraproject.Anaconda.Modules.Storage",
