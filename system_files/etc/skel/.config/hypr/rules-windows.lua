@@ -31,8 +31,9 @@ hl.window_rule({
     rounding = 0,
 })
 
+-- fullscreen_state_internal = 2 is "real" fullscreen; maximize (1) keeps rounding/shadow
 hl.window_rule({
-    match = { xwayland = true, fullscreen = true },
+    match = { xwayland = true, fullscreen_state_internal = 2 },
     immediate = true,
     idle_inhibit = "fullscreen",
     no_anim = true,
@@ -43,7 +44,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { fullscreen = true },
+    match = { fullscreen_state_internal = 2 },
     no_anim = true,
     no_blur = true,
     no_shadow = true,
