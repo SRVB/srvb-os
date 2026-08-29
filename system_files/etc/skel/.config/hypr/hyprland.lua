@@ -1,6 +1,10 @@
 require("environment")
 
+-- Load plugins installed as RPMs directly, without hyprpm
 hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprctl plugin load /usr/lib64/hyprland/libhyprbars.so")
+    -- re-parse the config so files gated on hl.plugin.hyprbars pick it up
+    hl.exec_cmd("hyprctl reload")
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
     hl.exec_cmd("uwsm finalize")
     hl.exec_cmd("noctalia")
