@@ -37,8 +37,8 @@ hl.bind(mainMod .. "+CTRL+H", hl.dsp.window.resize({ x = -50, y = 0, relative = 
 hl.bind(mainMod .. "+CTRL+L", hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
 hl.bind(mainMod .. "+CTRL+K", hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
 hl.bind(mainMod .. "+CTRL+J", hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
-hl.bindm(mainMod .. "+mouse:272", hl.dsp.window.move())
-hl.bindm(mainMod .. "+mouse:273", hl.dsp.window.resize())
+hl.bind(mainMod .. "+mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. "+mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Workspaces
 for workspace = 1, 9 do
