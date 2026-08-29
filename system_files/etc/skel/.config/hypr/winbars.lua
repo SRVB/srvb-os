@@ -42,30 +42,12 @@ hl.plugin.hyprbars.add_button({
     action = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })']],
 })
 
--- Send the active window to the scratchpad
-hl.plugin.hyprbars.add_button({
-    bg_color = colors.secondary,
-    fg_color = colors.on_secondary,
-    size = 10,
-    icon = "",
-    action = [[hyprctl dispatch movetoworkspacesilent special:scratchpad]],
-})
-
--- Return the active window to the primary workspace
-hl.plugin.hyprbars.add_button({
-    bg_color = colors.secondary,
-    fg_color = colors.on_secondary,
-    size = 10,
-    icon = "",
-    action = [[hyprctl dispatch movetoworkspace 1]],
-})
-
 -- Close the active window
 hl.plugin.hyprbars.add_button({
     bg_color = colors.error,
     fg_color = colors.on_error,
     size = 10,
-    icon = "󰖭",
+    icon = "",
     action = [[hyprctl dispatch 'hl.dsp.window.close()']],
 })
 
