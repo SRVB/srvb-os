@@ -48,7 +48,7 @@ hl.plugin.hyprbars.add_button({
     fg_color = colors.on_secondary,
     size = 10,
     icon = "",
-    action = [[hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:scratchpad" })']],
+    action = [[hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:scratchpad", follow = false })']],
 })
 
 -- Close the active window
