@@ -53,8 +53,10 @@ hl.config({
 })
 
 require("binds")
+require("winbars")
 require("rules-layer")
 require("rules-windows")
 require("rules-workspace")
 require("inputs")
+require("winbars")
 

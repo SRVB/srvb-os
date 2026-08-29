@@ -18,6 +18,7 @@ dnf5 install -y \
 	matugen \
 	hyprland \
 	hyprland-guiutils \
+	hyprland-plugins \
 	xdg-desktop-portal \
 	xdg-desktop-portal-hyprland \
 	xkeyboard-config \
