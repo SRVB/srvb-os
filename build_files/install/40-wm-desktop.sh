@@ -24,10 +24,7 @@ dnf5 install -y \
 	xkeyboard-config \
 	adw-gtk3-theme \
 	qt6ct \
-	jq
+	qt6ct
 
 systemctl enable greetd.service
 systemctl set-default graphical.target
-
-# Ensure the winbars scratchpad-toggle helper is executable regardless of git file mode.
-chmod 0755 /usr/libexec/srvb/scratchpad-toggle

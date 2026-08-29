@@ -68,20 +68,19 @@ polkit_agent = true
     pipe_to_command = true
 
 [theme]
-builtin = "Ayu"
-community_palette = "Aura"
+builtin = "Eldritch"
+community_palette = "Ayu Green"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
 
-[wallpaper.default]
-path = "/usr/share/srvb/wallpaper.png"
+[wallpaper]
+
+    [wallpaper.default]
+    path = "/usr/share/srvb/wallpapers/srvb.png"
 
 [widget.taskbar]
 pinned = [ "org.gnome.Nautilus", "kitty", "io.github.kolunmi.Bazaar", "app.zen_browser.zen" ]
-
-    [widget.taskbar.actions]
-    right = "workspace-switch left"
 
 [widget.workspaces]
 capsule = true
