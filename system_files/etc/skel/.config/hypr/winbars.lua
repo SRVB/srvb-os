@@ -8,24 +8,24 @@ end
 -- noctalia.colors already provides Hyprland's expected "rgb(RRGGBB)" format
 local ok, noctalia = pcall(require, "noctalia")
 local colors = ok and noctalia.colors or {
-    primary = "rgb(a6e3a1)",
-    surface = "rgb(1e1e2e)",
-    on_surface = "rgb(cdd6f4)",
-    secondary = "rgb(f9e2af)",
+    primary      = "rgb(a6e3a1)",
+    surface      = "rgb(1e1e2e)",
+    on_surface   = "rgb(cdd6f4)",
+    secondary    = "rgb(f9e2af)",
     on_secondary = "rgb(1e1e2e)",
-    error = "rgb(f38ba8)",
-    on_error = "rgb(1e1e2e)",
+    error        = "rgb(f38ba8)",
+    on_error     = "rgb(1e1e2e)",
 }
 
 hl.config({
     plugin = {
         hyprbars = {
-            bar_height = 28,
-            bar_color = colors.surface,
-            ["col.text"] = colors.on_surface,
-            bar_text_size = 11,
-            bar_text_align = "left",
-            bar_padding = 10,
+            bar_height         = 28,
+            bar_color          = colors.surface,
+            ["col.text"]       = colors.on_surface,
+            bar_text_size      = 11,
+            bar_text_align     = "left",
+            bar_padding        = 10,
             bar_button_padding = 8,
         },
     },
@@ -37,17 +37,16 @@ hl.config({
 hl.plugin.hyprbars.add_button({
     bg_color = colors.primary,
     fg_color = colors.on_surface,
-    size = 10,
-    icon = "",
-    action = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })']],
+    size     = 10,
+    icon     = "",
+    action   = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })']],
 })
 
 -- Close the active window
 hl.plugin.hyprbars.add_button({
     bg_color = colors.error,
     fg_color = colors.on_error,
-    size = 10,
-    icon = "",
-    action = [[hyprctl dispatch 'hl.dsp.window.close()']],
+    size     = 10,
+    icon     = "",
+    action   = [[hyprctl dispatch 'hl.dsp.window.close()']],
 })
-
