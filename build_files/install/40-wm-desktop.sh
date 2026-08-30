@@ -23,8 +23,7 @@ dnf5 install -y \
 	xdg-desktop-portal-hyprland \
 	xkeyboard-config \
 	adw-gtk3-theme \
-	qt6ct \
-	qt6ct
+	hyprqt6engine
 
 systemctl enable greetd.service
 systemctl set-default graphical.target
