@@ -12,6 +12,7 @@ end)
 
 hl.config({
     general = {
+        layout = "scrolling",
         gaps_in = 5,
         gaps_out = 10,
         border_size = 3,
@@ -36,10 +37,10 @@ hl.config({
             vibrancy = 0.1696,
         },
     },
-    dwindle = {
-        preserve_split = true,
-        split_width_multiplier = 1.8,
-        precise_mouse_move = true
+    scrolling = {
+        fullscreen_on_one_column = true,
+        column_width = 0.5,
+        follow_focus = true,
     },
     misc = {
         middle_click_paste = true,
