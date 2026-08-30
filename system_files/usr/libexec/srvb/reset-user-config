@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "This will overwrite your current configuration in ~/.config"
+echo "with the default configuration from /etc/skel/.config."
+read -r -p "Continue? [y/N] " reply
+
+case "${reply,,}" in
+	y | yes) ;;
+	*)
+		echo "Aborted."
+		exit 0
+		;;
+esac
+
+mkdir -p "$HOME/.config"
+cp -avf /etc/skel/.config/. "$HOME/.config/"
+echo "Done. Log out and back in for all changes to take effect."
