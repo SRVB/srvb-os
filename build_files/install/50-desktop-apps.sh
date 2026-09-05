@@ -48,7 +48,3 @@ fc-cache -f "${font_dir}"
 useradd -D --shell /usr/bin/fish
 
 systemctl enable ublue-os-media-automount.service
-test -f /usr/lib/systemd/user/hyprmoncfgd.service
-mkdir -p /etc/systemd/user/default.target.wants
-ln -sf /usr/lib/systemd/user/hyprmoncfgd.service \
-	/etc/systemd/user/default.target.wants/hyprmoncfgd.service
