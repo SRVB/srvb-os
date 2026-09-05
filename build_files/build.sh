@@ -7,8 +7,6 @@ cp -avf "/ctx/system_files"/. /
 
 install -Dm644 /ctx/logo.png /usr/share/plymouth/themes/srvb/logo.png
 
-chmod +x /usr/libexec/srvb/reset-user-config
-
 ### Install system-wide components
 
 mapfile -t installers < <(find /ctx/install -maxdepth 1 -name '*.sh' | LC_ALL=C sort -V)

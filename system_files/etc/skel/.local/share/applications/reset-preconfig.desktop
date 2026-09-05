@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Reset Pre-Configuration
-Comment=Overwrite ~/.config with the default SRVB OS configuration
-Exec=kitty --hold -e /usr/libexec/srvb/reset-user-config
-Icon=view-refresh
-Terminal=false
-Categories=System;Settings;
