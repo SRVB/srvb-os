@@ -7,13 +7,13 @@ dnf5 install -y \
 	greetd \
 	noctalia \
 	noctalia-greeter \
-	umbriel-nighly \
+	umbriel-nightly \
 	xwayland-satellite \
 	gnome-keyring \
 	gnome-keyring-pam \
 	matugen \
 	adw-gtk3-theme \
-	hyprqt6engine
+	qt6ct
 
 systemctl enable greetd.service
 systemctl set-default graphical.target
