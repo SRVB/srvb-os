@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  Ein Fedora-bootc-Image mit Hyprland und Noctalia.
+  Ein Fedora-bootc-Image mit Umbriel und Noctalia.
 </p>
 
 ## Überblick
 
 SRVB OS ist ein unveränderliches Desktop-Linux auf Basis von Fedora bootc. Das
-System kombiniert den tiling Wayland-Compositor Hyprland mit der Noctalia
+System kombiniert den tiling Wayland-Compositor Umbriel mit der Noctalia
 Desktop-Shell und einem schlanken, vorkonfigurierten Arbeitsbereich.
 
 Das Image wird als OCI-Container gebaut und kann direkt mit `bootc` installiert
@@ -20,7 +20,7 @@ oder aktualisiert werden.
 ## Enthalten
 
 - Fedora bootc als Basis
-- Hyprland als Wayland-Compositor
+- Umbriel als Wayland-Compositor
 - Noctalia Shell und Noctalia Greeter
 - greetd für die Anmeldung
 - PipeWire und WirePlumber für Audio
@@ -29,7 +29,7 @@ oder aktualisiert werden.
 - Vorinstallierte Flatpak-Anbindung mit Flathub
 - Zusätzliche Gaming-/Daily-Driver-Flatpaks (u. a. Lutris, Heroic, OBS)
 - SRVB Plymouth-Boot-Splash mit `logo.png`
-- Standardkonfigurationen für Hyprland und Noctalia in `/etc/skel`
+- Standardkonfigurationen für Umbriel und Noctalia in `/etc/skel`
 
 ## Image
 
