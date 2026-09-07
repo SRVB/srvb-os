@@ -7,11 +7,14 @@ set -euo pipefail
 FEDORA_VERSION="$(rpm -E '%{fedora}')"
 dnf5 config-manager addrepo --from-repofile="https://copr.fedorainfracloud.org/coprs/ublue-os/packages/repo/fedora-${FEDORA_VERSION}/ublue-os-packages-fedora-${FEDORA_VERSION}.repo"
 dnf5 config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
+dnf5 config-manager addrepo --from-repofile="https://copr.fedorainfracloud.org/coprs/paolino/hyprmoncfg/repo/fedora-${FEDORA_VERSION}/paolino-hyprmoncfg-fedora-${FEDORA_VERSION}.repo"
+dnf5 config-manager setopt copr:copr.fedorainfracloud.org:paolino:hyprmoncfg.enabled=0
 dnf5 config-manager addrepo --from-repofile="https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo"
 dnf5 config-manager setopt terra.enabled=0
 
 dnf5 install -y \
 	--enablerepo=copr:copr.fedorainfracloud.org:ublue-os:packages \
+	--enablerepo=copr:copr.fedorainfracloud.org:paolino:hyprmoncfg \
 	--enablerepo=terra \
 	gamemode \
 	gnome-disk-utility \
@@ -24,12 +27,15 @@ dnf5 install -y \
 	openxr \
 	steam \
 	steam-devices \
+	satty \
 	gamescope \
+	hyprmoncfg \
 	ublue-os-media-automount-udev \
 	unzip \
 	vkBasalt \
 	vkBasalt.i686 \
-	vulkan-tools
+	vulkan-tools \
+	wl-clipboard
 
 curl --retry 3 -fsSL https://starship.rs/install.sh | sh -s -- \
 	--yes \
@@ -48,3 +54,7 @@ fc-cache -f "${font_dir}"
 useradd -D --shell /usr/bin/fish
 
 systemctl enable ublue-os-media-automount.service
+test -f /usr/lib/systemd/user/hyprmoncfgd.service
+mkdir -p /etc/systemd/user/default.target.wants
+ln -sf /usr/lib/systemd/user/hyprmoncfgd.service \
+	/etc/systemd/user/default.target.wants/hyprmoncfgd.service

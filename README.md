@@ -5,14 +5,14 @@
 </p>
 
 <p align="center">
-  Ein Fedora-bootc-Image mit dem COSMIC Desktop.
+  Ein Fedora-bootc-Image mit Hyprland und Noctalia.
 </p>
 
 ## Überblick
 
 SRVB OS ist ein unveränderliches Desktop-Linux auf Basis von Fedora bootc. Das
-System bietet den modernen, Wayland-basierten COSMIC Desktop mit einem
-schlanken, vorkonfigurierten Arbeitsbereich.
+System kombiniert den tiling Wayland-Compositor Hyprland mit der Noctalia
+Desktop-Shell und einem schlanken, vorkonfigurierten Arbeitsbereich.
 
 Das Image wird als OCI-Container gebaut und kann direkt mit `bootc` installiert
 oder aktualisiert werden.
@@ -20,15 +20,16 @@ oder aktualisiert werden.
 ## Enthalten
 
 - Fedora bootc als Basis
-- COSMIC Desktop als Wayland-basierte Desktop-Umgebung
-- GNOME Keyring für die sichere Verwaltung von Zugangsdaten
+- Hyprland als Wayland-Compositor
+- Noctalia Shell und Noctalia Greeter
+- greetd für die Anmeldung
 - PipeWire und WirePlumber für Audio
-- NetworkManager, Bluetooth, fwupd und Power Profiles
+- NetworkManager, Bluetooth, firewalld (+ firewall-config), fwupd und Power Profiles
 - NVIDIA-Unterstützung über die vorbereiteten Kernel- und Dracut-Konfigurationen
 - Vorinstallierte Flatpak-Anbindung mit Flathub
-- Zusätzliche Desktop- und Gaming-Anwendungen wie Steam, Nautilus, Kitty und Gamescope
+- Zusätzliche Gaming-/Daily-Driver-Flatpaks (u. a. Lutris, Heroic, OBS)
 - SRVB Plymouth-Boot-Splash mit `logo.png`
-- Fish als Standardshell mit Starship-Prompt und Fira Code Nerd Font
+- Standardkonfigurationen für Hyprland und Noctalia in `/etc/skel`
 
 ## Image
 
