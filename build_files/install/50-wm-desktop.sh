@@ -3,8 +3,9 @@
 set -euo pipefail
 
 dnf5 install -y \
+	--enablerepo=terra \
 	greetd \
-	noctalia-git \
+	noctalia \
 	noctalia-greeter \
 	umbriel-nighly \
 	xwayland-satellite \
