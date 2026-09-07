@@ -2,9 +2,28 @@
 
 set -euo pipefail
 
-dnf5 install -y \
-	@cosmic-desktop-environment \
-	gnome-keyring \
-	gnome-keyring-pam
+FEDORA_VERSION="$(rpm -E '%{fedora}')"
+dnf5 config-manager addrepo --from-repofile="https://copr.fedorainfracloud.org/coprs/lionheartp/Hyprland/repo/fedora-${FEDORA_VERSION}/lionheartp-Hyprland-fedora-${FEDORA_VERSION}.repo"
+dnf5 config-manager setopt copr:copr.fedorainfracloud.org:lionheartp:Hyprland.enabled=0
 
-#systemctl set-default graphical.target
+dnf5 install -y \
+	--enablerepo=copr:copr.fedorainfracloud.org:lionheartp:Hyprland \
+	--exclude=wofi \
+	--exclude=nwg-panel \
+	greetd \
+	gnome-keyring \
+	gnome-keyring-pam \
+	noctalia-git \
+	noctalia-greeter \
+	matugen \
+	hyprland \
+	hyprland-guiutils \
+	hyprland-plugins \
+	xdg-desktop-portal \
+	xdg-desktop-portal-hyprland \
+	xkeyboard-config \
+	adw-gtk3-theme \
+	hyprqt6engine
+
+systemctl enable greetd.service
+systemctl set-default graphical.target
