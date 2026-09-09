@@ -1,24 +1,7 @@
-# Umbriel configuration entry point. Installed to /etc/xdg/umbriel by the image
-# build; ~/.config/umbriel/config.toml takes precedence for user overrides.
-# Category files are loaded in order; personal overrides are loaded last.
-
-[include]
-files = [
-    "general.toml",
-    "outputs.toml",
-    "workspaces.toml",
-    "colors.toml",
-    "appearance.toml",
-    "input.toml",
-    "scratchpads.toml",
-    "keybinds.toml",
-    "layout.toml",
-    "window-rules.toml",
-    "layer-rules.toml",
-    "animation.toml",
-    "overview.toml",
-    "security.toml",
-]
-
-[include.optional]
-files = ["~/.config/umbriel/noctalia.toml"]
+# Output sections are machine-specific. Add them here when needed.
+# [output.DP-1]
+# enabled = true
+# mode = "2560x1440@144"
+# position = [0, 0]
+# scale = 1.25
+# workspace_axis = "horizontal"
