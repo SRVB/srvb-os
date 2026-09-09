@@ -1,4 +1,5 @@
-# Umbriel configuration entry point.
+# Umbriel configuration entry point. Installed to /etc/xdg/umbriel by the image
+# build; ~/.config/umbriel/config.toml takes precedence for user overrides.
 # Category files are loaded in order; personal overrides are loaded last.
 
 [include]
@@ -20,4 +21,4 @@ files = [
 ]
 
 [include.optional]
-files = ["noctalia.toml"]
+files = ["~/.config/umbriel/noctalia.toml"]
