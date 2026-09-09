@@ -1,0 +1,7 @@
+# Output sections are machine-specific. Add them here when needed.
+# [output.DP-1]
+# enabled = true
+# mode = "2560x1440@144"
+# position = [0, 0]
+# scale = 1.25
+# workspace_axis = "horizontal"
