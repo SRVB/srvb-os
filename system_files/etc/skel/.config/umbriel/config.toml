@@ -1,3 +1,26 @@
+# Umbriel configuration entry point.
+# Distro defaults from /usr/share/srvb/umbriel/ are included below.
+# Comment out any default file to replace it with your own configuration or overrides.
+
+[include]
+files = [
+    "/usr/share/srvb/umbriel/general.toml",
+    "/usr/share/srvb/umbriel/workspaces.toml",
+    "/usr/share/srvb/umbriel/appearance.toml",
+    "/usr/share/srvb/umbriel/input.toml",
+    "/usr/share/srvb/umbriel/scratchpads.toml",
+    "/usr/share/srvb/umbriel/keybinds.toml",
+    "/usr/share/srvb/umbriel/layout.toml",
+    "/usr/share/srvb/umbriel/window-rules.toml",
+    "/usr/share/srvb/umbriel/layer-rules.toml",
+    "/usr/share/srvb/umbriel/animation.toml",
+    "/usr/share/srvb/umbriel/overview.toml",
+    "/usr/share/srvb/umbriel/security.toml",
+]
+
+[include.optional]
+files = ["noctalia.toml"]
+
 # Output sections are machine-specific. Add them here when needed.
 # [output.DP-1]
 # enabled = true
