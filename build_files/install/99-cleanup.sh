@@ -20,5 +20,7 @@ dnf5 clean all
 rm -rf /var/cache/akmods \
 	/var/cache/dnf \
 	/var/tmp/* \
-	/tmp/* \
-	/run/*
+	/tmp/*
+
+# /run/systemd holds active bind mounts (e.g. resolv.conf) from the build container, leave it alone.
+find /run -mindepth 1 -maxdepth 1 ! -name systemd -exec rm -rf {} +
