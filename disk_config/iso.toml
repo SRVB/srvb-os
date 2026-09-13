@@ -26,7 +26,7 @@ flatpak install --system --noninteractive flathub \
 ## every boot (mount: /: fsconfig ... overlay: No changes allowed in
 ## reconfigure). Drop just that line, keep /boot, /boot/efi, swap, etc.
 ## See: https://github.com/bootc-dev/bootc/issues/971
-#awk '$2 != "/"' /etc/fstab > /etc/fstab.new && mv /etc/fstab.new /etc/fstab
+awk '$2 != "/"' /etc/fstab > /etc/fstab.new && mv /etc/fstab.new /etc/fstab
 %end
 """
 
@@ -44,9 +44,7 @@ enable = [
   "org.fedoraproject.Anaconda.Modules.Security",
   "org.fedoraproject.Anaconda.Modules.Services",
   "org.fedoraproject.Anaconda.Modules.Users",
-  "org.fedoraproject.Anaconda.Modules.Timezone"
+  "org.fedoraproject.Anaconda.Modules.Timezone",
 ]
 
-disable = [
-  "org.fedoraproject.Anaconda.Modules.Subscription",
-]
+disable = ["org.fedoraproject.Anaconda.Modules.Subscription"]
