@@ -3,8 +3,8 @@ middle_click_paste = true
 window_drag_toggle = "none"
 
 [input.keyboard]
-layout = ""
-variant = ""
+layout = "de"
+variant = "nodeadkeys"
 options = ""
 repeat_rate = 25
 repeat_delay = 600
