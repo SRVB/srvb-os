@@ -43,5 +43,12 @@ rm -f /tmp/nvidia-container.pp
 # Enable the service that generates the NVIDIA Container Device Interface specification.
 systemctl enable nvctk-cdi.service
 
+# --no-hostonly avoids baking in build-container-specific hardware assumptions;
+# this initramfs must boot on whatever hardware the image is deployed to.
 depmod -a "${KVER}"
-dracut --force --kver "${KVER}"
+export DRACUT_NO_XATTR=1
+dracut --force --no-hostonly --reproducible --zstd -v \
+	--add ostree \
+	--kver "${KVER}" \
+	-f "/usr/lib/modules/${KVER}/initramfs.img"
+chmod 0600 "/usr/lib/modules/${KVER}/initramfs.img"
