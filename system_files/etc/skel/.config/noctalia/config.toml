@@ -81,11 +81,6 @@ builtin_ids = [
     "starship",
 ]
 
-[wallpaper]
-
-[wallpaper.default]
-path = "/usr/share/srvb/wallpapers/srvb.png"
-
 [widget.taskbar]
 pinned = [
     "org.gnome.Nautilus",
