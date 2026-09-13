@@ -2,6 +2,7 @@
 
 "Mod+Return" = "spawn:kitty"
 "Mod" = "spawn:noctalia msg panel-toggle launcher"
+"Print" = "spawn:noctalia msg screenshot-annotate"
 "Mod+Q" = "window-close"
 "Mod+Left" = "window-focus-left"
 "Mod+Down" = "window-focus-down"

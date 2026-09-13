@@ -20,7 +20,6 @@ dnf5 install -y \
 	openxr \
 	steam \
 	steam-devices \
-	satty \
 	gamescope \
 	ublue-os-media-automount-udev \
 	unzip \
