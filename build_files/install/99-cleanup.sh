@@ -22,5 +22,6 @@ rm -rf /var/cache/akmods \
 	/var/tmp/* \
 	/tmp/*
 
-# /run/systemd holds active bind mounts (e.g. resolv.conf) from the build container, leave it alone.
-find /run -mindepth 1 -maxdepth 1 ! -name systemd -exec rm -rf {} +
+# Only remove known build leftovers; /run also holds active bind mounts
+# (e.g. resolv.conf, .containerenv) that must not be touched here.
+rm -rf /run/akmods /run/containers /run/lock /run/user
