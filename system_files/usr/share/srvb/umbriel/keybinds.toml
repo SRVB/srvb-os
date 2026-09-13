@@ -1,6 +1,7 @@
 [keybinds]
 
 "Mod+Return" = "spawn:kitty"
+"Mod+E" = "spawn:nautilus"
 "Mod" = "spawn:noctalia msg panel-toggle launcher"
 "Print" = "spawn:noctalia msg screenshot-annotate"
 "Mod+Q" = "window-close"
