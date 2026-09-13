@@ -28,8 +28,6 @@ oder aktualisiert werden.
 - NVIDIA-Unterstützung über die vorbereiteten Kernel- und Dracut-Konfigurationen
 - Vorinstallierte Flatpak-Anbindung mit Flathub
 - Zusätzliche Gaming-/Daily-Driver-Flatpaks (u. a. Lutris, Heroic, OBS)
-- SRVB Plymouth-Boot-Splash mit `logo.png`
-- Standardkonfigurationen für Umbriel und Noctalia in `/etc/skel`
 
 ## Image
 
