@@ -42,3 +42,6 @@ rm -f /tmp/nvidia-container.pp
 
 # Enable the service that generates the NVIDIA Container Device Interface specification.
 systemctl enable nvctk-cdi.service
+
+depmod -a "${KVER}"
+dracut --force --kver "${KVER}"
