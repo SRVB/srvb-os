@@ -43,4 +43,9 @@ for package in kernel kernel-core kernel-modules kernel-devel kernel-devel-match
 done
 
 # Install the OGC kernel without pulling in optional weak dependencies.
+# kernel-core's %posttrans triggers an automatic dracut regen for the new kernel here,
+# which already picks up system_files/usr/lib/dracut/dracut.conf.d/99-nvidia.conf
+# (copied to / before this script runs) and fails to add the nvidia module since
+# it isn't installed yet (that happens in 40-nvidia.sh). Harmless: 40-nvidia.sh
+# regenerates the initramfs again once the nvidia kmod exists.
 dnf5 install -y --setopt=install_weak_deps=False "${kernel_rpms[@]}"
