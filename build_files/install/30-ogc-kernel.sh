@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-OGC_KERNEL_IMAGE="ghcr.io/opengamingcollective/kernel-packages-fedora:latest"
+FEDORA_VERSION="$(rpm -E '%{fedora}')"
+
+OGC_KERNEL_IMAGE="ghcr.io/opengamingcollective/kernel-packages-fedora:latest-fc${FEDORA_VERSION}"
 OGC_KERNEL_DIR="$(mktemp -d)"
 
 # Remove the downloaded artifact and temporary files when the script exits.
