@@ -17,7 +17,6 @@ dnf5 install -y \
 	glibc-all-langpacks \
 	langpacks-de \
 	langpacks-en \
-	game-devices-udev \
 	gnome-keyring \
 	gnome-keyring-pam
 
