@@ -17,6 +17,8 @@ dnf5 install -y \
 	glibc-all-langpacks \
 	langpacks-de \
 	langpacks-en \
+	plymouth \
+	plymouth-plugin-script \
 	gnome-keyring \
 	gnome-keyring-pam
 
