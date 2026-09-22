@@ -8,6 +8,7 @@ dnf5 remove -y \
 	akmods \
 	kernel-devel \
 	kernel-devel-matched
+
 dnf5 autoremove -y
 
 # akmods' sysusers.d entry is gone with the package, drop the orphaned account too.
