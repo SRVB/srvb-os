@@ -22,8 +22,5 @@ dnf5 install -y \
 	gnome-keyring \
 	gnome-keyring-pam
 
-
 chmod 0644 /usr/share/plymouth/themes/srvb/logo.png
 plymouth-set-default-theme -R srvb
-
-flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo

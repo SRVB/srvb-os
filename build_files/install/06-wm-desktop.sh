@@ -29,4 +29,5 @@ dnf5 install -y \
 	--exclude=decibels \
 	@gnome-desktop
 
+systemctl enable gdm.service
 systemctl set-default graphical.target

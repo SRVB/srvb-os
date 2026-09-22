@@ -15,3 +15,5 @@ dnf5 config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enab
 
 dnf5 config-manager addrepo --from-repofile="https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo"
 dnf5 config-manager setopt terra.enabled=0
+
+flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo
