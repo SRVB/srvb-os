@@ -22,5 +22,7 @@ dnf5 install -y \
 	gnome-keyring \
 	gnome-keyring-pam
 
+systemctl enable srvb-flatpak-preinstall.service
+
 chmod 0644 /usr/share/plymouth/themes/srvb/logo.png
 plymouth-set-default-theme -R srvb
