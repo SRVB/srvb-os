@@ -18,46 +18,43 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    bash /ctx/install/10-setup-repos.sh
+    /ctx/install/10-setup-repos.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    bash /ctx/install/20-base-packages.sh
+    /ctx/install/20-base-packages.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    bash /ctx/install/30-ogc-kernel.sh
+    /ctx/install/30-ogc-kernel.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    bash /ctx/install/40-nvidia.sh
+    /ctx/install/40-nvidia.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    bash /ctx/install/50-wm-desktop.sh
+    /ctx/install/50-wm-desktop.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    bash /ctx/install/60-desktop-apps.sh
+    /ctx/install/60-desktop-apps.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    bash /ctx/install/99-cleanup.sh
-
-RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
-    systemctl enable podman.socket
+    /ctx/install/99-cleanup.sh
 
 # LINTING
 RUN bootc container lint

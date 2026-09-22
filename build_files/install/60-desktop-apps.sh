@@ -45,3 +45,4 @@ fc-cache -f "${font_dir}"
 useradd -D --shell /usr/bin/fish
 
 systemctl enable ublue-os-media-automount.service
+systemctl enable podman.socket
