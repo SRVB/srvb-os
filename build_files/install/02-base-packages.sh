@@ -8,6 +8,7 @@ dnf5 install -y \
 	--enablerepo=copr:copr.fedorainfracloud.org:ublue-os:packages \
 	@multimedia \
 	ublue-os-media-automount-udev \
+	ublue-os-udev-rules \
 	tuned \
 	tuned-ppd \
 	uresourced \
