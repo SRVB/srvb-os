@@ -28,7 +28,10 @@ dnf5 install -y \
 	--exclude=ptyxis \
 	--exclude=decibels \
 	@gnome-desktop \
-	qt6ct
+	qt6-qtbase \
+	qt6-qtbase-gui \
+	qt6-qtdeclarative \
+	qt6-qtwayland-adwaita-decoration
 
 systemctl enable gdm.service
 systemctl set-default graphical.target

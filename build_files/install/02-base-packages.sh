@@ -8,13 +8,20 @@ dnf5 install -y \
 	--enablerepo=copr:copr.fedorainfracloud.org:ublue-os:packages \
 	@multimedia \
 	ublue-os-media-automount-udev \
+	tuned \
+	tuned-ppd \
+	uresourced \
+	dosfstools \
+	exfatprogs \
+	ntfs-3g \
+	ntfsprogs \
+	amd-ucode-firmware \
 	distrobox \
 	fish \
 	fuse \
 	fuse-libs \
 	btrfs-progs \
 	cryptsetup \
-	glibc-all-langpacks \
 	langpacks-de \
 	langpacks-en \
 	plymouth \
