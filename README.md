@@ -5,14 +5,16 @@
 </p>
 
 <p align="center">
-  Ein Fedora-bootc-Image mit Umbriel und Noctalia.
+  Ein vorkonfiguriertes Fedora-bootc-Image mit GNOME.
 </p>
 
 ## Überblick
 
 SRVB OS ist ein unveränderliches Desktop-Linux auf Basis von Fedora bootc. Das
-System kombiniert den tiling Wayland-Compositor Umbriel mit der Noctalia
-Desktop-Shell und einem schlanken, vorkonfigurierten Arbeitsbereich.
+System verwendet GNOME als moderne Wayland-Desktopumgebung und bringt einen
+persönlich vorkonfigurierten Arbeitsbereich mit. SRVB OS ist eine persönliche
+Distribution-Konfiguration und erhebt nicht den Anspruch, eine allgemeingültige
+Desktop-Distribution zu sein.
 
 Das Image wird als OCI-Container gebaut und kann direkt mit `bootc` installiert
 oder aktualisiert werden.
@@ -20,14 +22,15 @@ oder aktualisiert werden.
 ## Enthalten
 
 - Fedora bootc als Basis
-- Umbriel als Wayland-Compositor
-- Noctalia Shell und Noctalia Greeter
-- greetd für die Anmeldung
+- GNOME als Wayland-Desktopumgebung
+- GDM als Anmeldemanager
+- Persönlich vorkonfigurierter GNOME-Desktop
 - PipeWire und WirePlumber für Audio
 - NetworkManager, Bluetooth, firewalld (+ firewall-config), fwupd und Power Profiles
 - NVIDIA-Unterstützung über die vorbereiteten Kernel- und Dracut-Konfigurationen
-- Vorinstallierte Flatpak-Anbindung mit Flathub
-- Zusätzliche Gaming-/Daily-Driver-Flatpaks (u. a. Lutris, Heroic, OBS)
+- Vorinstallierte Flatpak-Anbindung mit Flathub und GNOME-Anwendungen
+- Ghostty-Terminal mit Cursor-Shadern sowie Fish und Starship
+- Zusätzliche Gaming-/Daily-Driver-Pakete und Flatpaks (u. a. Steam, Lutris, Heroic, OBS)
 
 ## Image
 
@@ -56,7 +59,14 @@ Für spätere Updates genügt:
 sudo bootc upgrade
 ```
 
-Vor einem Wechsel sollte ein Backup wichtiger Daten vorhanden sein. Das Image
+## Hinweis zur Verwendung
+
+SRVB OS ist eine persönliche Konfiguration und wird ohne Garantie für jeden
+Anwendungsfall bereitgestellt. Die Verwendung, Installation und Aktualisierung
+erfolgt auf eigene Gefahr. Vor einem Wechsel sollte ein Backup wichtiger Daten
+vorhanden sein.
+
+Das Image
 ist für eine Neuinstallation oder den Wechsel von einem kompatiblen Fedora-
 Atomic/bootc-System gedacht.
 

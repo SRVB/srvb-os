@@ -31,6 +31,8 @@ dnf5 install -y \
 	gnome-keyring-pam
 
 systemctl enable srvb-flatpak-preinstall.service
+systemctl enable tuned.service
+systemctl enable tuned-ppd.service
 
 chmod 0644 /usr/share/plymouth/themes/srvb/logo.png
 plymouth-set-default-theme -R srvb
