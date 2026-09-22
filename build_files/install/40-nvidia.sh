@@ -15,7 +15,7 @@ packages=(
 )
 
 # Determine the kernel version for which the NVIDIA module should be built.
-KVER="$(ls /usr/lib/modules | head -n1)"
+KVER="$(find /usr/lib/modules -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | head -n1)"
 
 # Install the NVIDIA akmod package and build the module for the target kernel.
 dnf5 -y install --enablerepo=fedora-nvidia akmod-nvidia
