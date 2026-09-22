@@ -2,7 +2,6 @@
 FROM scratch AS ctx
 COPY build_files /
 COPY system_files /system_files
-COPY logo.png /logo.png
 
 # Base Image
 FROM quay.io/fedora/fedora-bootc:latest
@@ -10,9 +9,6 @@ FROM quay.io/fedora/fedora-bootc:latest
 # MODIFICATIONS
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     cp -avf /ctx/system_files/. /
-
-RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
-    install -Dm644 /ctx/logo.png /usr/share/plymouth/themes/srvb/logo.png
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
@@ -29,7 +25,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
-    --mount=type=tmpfs,dst=/tmp \
     /ctx/install/30-ogc-kernel.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
@@ -53,7 +48,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
-    --mount=type=tmpfs,dst=/tmp \
     /ctx/install/99-cleanup.sh
 
 # LINTING

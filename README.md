@@ -1,7 +1,7 @@
 # SRVB OS
 
 <p align="center">
-  <img src="logo.png" alt="SRVB OS Logo" width="180">
+  <img src="system_files/usr/share/plymouth/themes/srvb/logo.png" alt="SRVB OS Logo" width="180">
 </p>
 
 <p align="center">
