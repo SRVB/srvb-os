@@ -13,6 +13,7 @@ nerd_font_archives=(
 	Hack.zip
 	Meslo.zip
 	GeistMono.zip
+	NerdFontsSymbolsOnly.zip
 )
 
 font_base_dir=/usr/share/fonts
