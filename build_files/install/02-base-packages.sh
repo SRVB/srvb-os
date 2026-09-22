@@ -10,7 +10,6 @@ dnf5 install -y \
 	ublue-os-media-automount-udev \
 	distrobox \
 	fish \
-	flatpak \
 	fuse \
 	fuse-libs \
 	btrfs-progs \

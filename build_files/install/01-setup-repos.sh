@@ -4,7 +4,7 @@ set -euo pipefail
 
 FEDORA_VERSION="$(rpm -E '%{fedora}')"
 
-dnf5 -y install dnf5-plugins
+dnf5 -y install dnf5-plugins flatpak
 
 dnf5 config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-nvidia.repo
 dnf5 config-manager setopt fedora-nvidia.enabled=0
