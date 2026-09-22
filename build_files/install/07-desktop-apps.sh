@@ -6,7 +6,6 @@ set -euo pipefail
 
 dnf5 install -y \
 	--enablerepo=terra \
-	gamemode \
 	gnome-disk-utility \
 	libFAudio \
 	libFAudio.i686 \

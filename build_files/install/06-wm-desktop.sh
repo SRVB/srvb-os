@@ -27,7 +27,8 @@ dnf5 install -y \
 	--exclude=papers \
 	--exclude=ptyxis \
 	--exclude=decibels \
-	@gnome-desktop
+	@gnome-desktop \
+	qt6ct
 
 systemctl enable gdm.service
 systemctl set-default graphical.target
