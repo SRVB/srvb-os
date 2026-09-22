@@ -1,11 +1,13 @@
 [Unit]
-Description=Install SRVB OS Flatpaks
+Description=Sync SRVB OS Flatpaks
 Wants=network-online.target
 After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/flatpak preinstall --system --noninteractive
+ExecStart=/usr/bin/dbus-run-session -- /usr/bin/flatpak --system --noninteractive preinstall
+Restart=on-failure
+RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
