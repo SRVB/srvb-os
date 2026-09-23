@@ -28,6 +28,7 @@ dnf5 install -y \
 	--exclude=ptyxis \
 	--exclude=decibels \
 	@gnome-desktop \
+	xdg-utils \
 	qt6-qtbase \
 	qt6-qtbase-gui \
 	qt6-qtdeclarative \

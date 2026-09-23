@@ -61,3 +61,15 @@ IsRuntime=false
 [Flatpak Preinstall org.gnome.Showtime]
 Branch=stable
 IsRuntime=false
+
+[Flatpak Preinstall io.missioncenter.MissionCenter]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall com.mattjakeman.ExtensionManager]
+Branch=stable
+IsRuntime=false
+
+[Flatpak Preinstall io.github.benjamimgois.goverlay]
+Branch=stable
+IsRuntime=false
