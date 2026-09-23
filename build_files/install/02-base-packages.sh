@@ -9,6 +9,7 @@ dnf5 install -y \
 	@multimedia \
 	ublue-os-media-automount-udev \
 	ublue-os-udev-rules \
+	lm-sensors \
 	tuned \
 	tuned-ppd \
 	uresourced \
