@@ -12,14 +12,27 @@ dnf5 install -y \
 	mangohud \
 	mangohud.i686 \
 	openxr \
-	steam \
-	steam-devices \
 	gamescope \
 	unzip \
 	vkBasalt \
 	vkBasalt.i686 \
 	vulkan-tools \
-	ghostty
+	ghostty \
+	ca-certificates \
+	ca-certificates-mozilla \
+	nss \
+	p11-kit \
+	p11-kit-trust \
+	libcurl \
+	libcurl.i686 \
+	glibc.i686 \
+	libstdc++.i686 \
+	mesa-vulkan-drivers.i686 \
+	vulkan-loader.i686 \
+	steam \
+	steam-devices
+
+update-ca-trust
 
 # Install Ghostty Shaders
 shader_dir=/usr/share/srvb/ghostty/shaders
