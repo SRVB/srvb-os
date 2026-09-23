@@ -4,34 +4,25 @@ set -euo pipefail
 
 # Additional desktop applications and packages
 
-dnf5 install -y \
+dnf install -y \
 	--enablerepo=terra \
-	gnome-disk-utility \
-	libFAudio \
-	libFAudio.i686 \
-	mangohud \
-	mangohud.i686 \
-	openxr \
-	gamescope \
-	unzip \
-	vkBasalt \
-	vkBasalt.i686 \
-	vulkan-tools \
-	ghostty \
-	ca-certificates \
-	nss \
-	p11-kit \
-	p11-kit-trust \
-	libcurl \
-	libcurl.i686 \
-	glibc.i686 \
-	libstdc++.i686 \
-	mesa-vulkan-drivers.i686 \
-	vulkan-loader.i686 \
 	steam \
 	steam-devices
 
-update-ca-trust
+# dnf5 install -y \
+# 	--enablerepo=terra \
+# 	gnome-disk-utility \
+# 	libFAudio \
+# 	libFAudio.i686 \
+# 	mangohud \
+# 	mangohud.i686 \
+# 	openxr \
+# 	gamescope \
+# 	unzip \
+# 	vkBasalt \
+# 	vkBasalt.i686 \
+# 	vulkan-tools \
+# 	ghostty
 
 # Install Ghostty Shaders
 shader_dir=/usr/share/srvb/ghostty/shaders
