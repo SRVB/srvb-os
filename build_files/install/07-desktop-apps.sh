@@ -19,7 +19,6 @@ dnf5 install -y \
 	vulkan-tools \
 	ghostty \
 	ca-certificates \
-	ca-certificates-mozilla \
 	nss \
 	p11-kit \
 	p11-kit-trust \
