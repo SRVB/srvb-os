@@ -7,22 +7,19 @@ set -euo pipefail
 dnf install -y \
 	--enablerepo=terra \
 	steam \
-	steam-devices
-
-# dnf5 install -y \
-# 	--enablerepo=terra \
-# 	gnome-disk-utility \
-# 	libFAudio \
-# 	libFAudio.i686 \
-# 	mangohud \
-# 	mangohud.i686 \
-# 	openxr \
-# 	gamescope \
-# 	unzip \
-# 	vkBasalt \
-# 	vkBasalt.i686 \
-# 	vulkan-tools \
-# 	ghostty
+	steam-devices \
+	gnome-disk-utility \
+	libFAudio \
+	libFAudio.i686 \
+	mangohud \
+	mangohud.i686 \
+	openxr \
+	gamescope \
+	unzip \
+	vkBasalt \
+	vkBasalt.i686 \
+	vulkan-tools \
+	ghostty
 
 # Install Ghostty Shaders
 shader_dir=/usr/share/srvb/ghostty/shaders
