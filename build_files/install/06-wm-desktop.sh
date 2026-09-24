@@ -3,7 +3,6 @@
 set -euo pipefail
 
 dnf5 install -y \
-	--enablerepo=terra \
 	--exclude=baobab \
 	--exclude=firefox \
 	--exclude=gnome-calendar \
