@@ -13,8 +13,7 @@ mkdir -p /var/tmp
 chmod 1777 /var/tmp
 KERNEL_MODULE_TYPE=open akmods --force --kernels "${KVER}" --kmod nvidia
 
-module_path="$(find "/usr/lib/modules/${KVER}" -type f -name 'nvidia.ko*' -print -quit)"
-if [[ -z "${module_path}" || "$(modinfo -F license "${module_path}")" != 'Dual MIT/GPL' ]]; then
+if [[ "$(modinfo -F license "/usr/lib/modules/${KVER}/extra/nvidia/nvidia.ko.xz")" != 'Dual MIT/GPL' ]]; then
 	echo "The NVIDIA kernel module is not the open variant for ${KVER}" >&2
 	exit 1
 fi
