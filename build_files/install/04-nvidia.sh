@@ -5,13 +5,8 @@ set -euo pipefail
 # Determine the kernel version for which the NVIDIA module should be built.
 KVER="$(rpm -q --qf '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-core | sort -V | tail -n1)"
 
-# Install the NVIDIA akmod package and build the open module for the target kernel.
+# Install the NVIDIA akmod package and driver for the target kernel.
 dnf5 install -y --enablerepo=fedora-nvidia akmod-nvidia
-
-# Ensure that the temporary build directory has the expected permissions.
-mkdir -p /var/tmp
-chmod 1777 /var/tmp
-KERNEL_MODULE_TYPE=open akmods --force --kernels "${KVER}" --kmod nvidia
 
 # Install the NVIDIA driver, libraries, utilities, and 32-bit support.
 dnf5 install -y --enablerepo=fedora-nvidia \
@@ -23,6 +18,17 @@ dnf5 install -y --enablerepo=fedora-nvidia \
 	nvidia-persistenced \
 	nvidia-settings \
 	nvidia-driver-libs.i686
+
+# Ensure that the temporary build directory has the expected permissions.
+mkdir -p /var/tmp
+chmod 1777 /var/tmp
+export KERNEL_MODULE_TYPE=open
+akmods --force --kernels "${KVER}" --kmod nvidia
+depmod -a "${KVER}"
+if ! modinfo -k "${KVER}" nvidia >/dev/null 2>&1; then
+	echo "NVIDIA kernel module was not installed for ${KVER}" >&2
+	exit 1
+fi
 
 # Install the NVIDIA Container Toolkit from its dedicated repository.
 dnf5 install -y --enablerepo=nvidia-container-toolkit nvidia-container-toolkit
