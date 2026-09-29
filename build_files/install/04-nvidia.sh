@@ -28,10 +28,6 @@ akmods --force --kernels "${KVER}" --kmod nvidia
 # Install the NVIDIA driver, libraries, utilities, and 32-bit support.
 dnf5 -y install --enablerepo=fedora-nvidia "${packages[@]}"
 
-# Add the NVIDIA Container Toolkit repository and configure its verification settings.
-dnf5 config-manager addrepo --from-repofile=https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
-dnf5 config-manager setopt nvidia-container-toolkit.enabled=0
-dnf5 config-manager setopt nvidia-container-toolkit.gpgcheck=1
 # Install the NVIDIA Container Toolkit from its dedicated repository.
 dnf5 -y install --enablerepo=nvidia-container-toolkit nvidia-container-toolkit
 
