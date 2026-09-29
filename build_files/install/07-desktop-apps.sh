@@ -11,14 +11,18 @@ dnf install -y \
 	gnome-disk-utility \
 	libFAudio \
 	libFAudio.i686 \
+	gstreamer1-vaapi \
 	mangohud \
 	mangohud.i686 \
+	mesa-dri-drivers.i686 \
+	mesa-vulkan-drivers.i686 \
 	openxr \
 	gamescope \
 	unzip \
 	vkBasalt \
 	vkBasalt.i686 \
 	vulkan-tools \
+	vulkan-loader.i686 \
 	ghostty
 
 # Install Ghostty Shaders

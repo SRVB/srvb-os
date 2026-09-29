@@ -7,6 +7,7 @@ dnf5 install -y dnf5-plugins
 dnf5 install -y \
 	--enablerepo=copr:copr.fedorainfracloud.org:ublue-os:packages \
 	@multimedia \
+	zram-generator \
 	ublue-os-media-automount-udev \
 	ublue-os-udev-rules \
 	lm_sensors \
