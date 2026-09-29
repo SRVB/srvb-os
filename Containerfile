@@ -4,7 +4,7 @@ COPY build_files /
 COPY system_files /system_files
 
 # Base Image
-FROM quay.io/fedora/fedora-bootc:latest
+FROM quay.io/fedora/fedora-bootc:45
 
 # MODIFICATIONS
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
