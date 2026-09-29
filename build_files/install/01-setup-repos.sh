@@ -12,6 +12,10 @@ dnf5 config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-
 dnf5 config-manager setopt fedora-nvidia.enabled=0
 dnf5 config-manager setopt fedora-nvidia.priority=90
 
+dnf5 config-manager addrepo --from-repofile=https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
+dnf5 config-manager setopt nvidia-container-toolkit.enabled=0
+dnf5 config-manager setopt nvidia-container-toolkit.gpgcheck=1
+
 dnf5 config-manager addrepo --from-repofile="https://copr.fedorainfracloud.org/coprs/ublue-os/packages/repo/fedora-${FEDORA_VERSION}/ublue-os-packages-fedora-${FEDORA_VERSION}.repo"
 dnf5 config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
 
