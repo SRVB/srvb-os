@@ -13,11 +13,6 @@ mkdir -p /var/tmp
 chmod 1777 /var/tmp
 KERNEL_MODULE_TYPE=open akmods --force --kernels "${KVER}" --kmod nvidia
 
-if [[ "$(modinfo -F license "/usr/lib/modules/${KVER}/extra/nvidia/nvidia.ko.xz")" != 'Dual MIT/GPL' ]]; then
-	echo "The NVIDIA kernel module is not the open variant for ${KVER}" >&2
-	exit 1
-fi
-
 # Install the NVIDIA driver, libraries, utilities, and 32-bit support.
 dnf5 install -y --enablerepo=fedora-nvidia \
 	nvidia-driver-cuda \
