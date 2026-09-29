@@ -27,6 +27,10 @@ akmods --force --kernels "${KVER}" --kmod nvidia
 depmod -a "${KVER}"
 if ! modinfo -k "${KVER}" nvidia >/dev/null 2>&1; then
 	echo "NVIDIA kernel module was not installed for ${KVER}" >&2
+	failed_log="$(find /var/cache/akmods/nvidia -type f -name "*-for-${KVER}.failed.log" -print -quit)"
+	if [[ -n "${failed_log}" ]]; then
+		cat "${failed_log}" >&2
+	fi
 	exit 1
 fi
 
