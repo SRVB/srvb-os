@@ -2,18 +2,6 @@
 
 set -ouex pipefail
 
-# NVIDIA userspace packages to install after building the kernel module.
-packages=(
-	nvidia-driver-cuda
-	libnvidia-fbc
-	libva-nvidia-driver
-	nvidia-driver
-	nvidia-modprobe
-	nvidia-persistenced
-	nvidia-settings
-	nvidia-driver-libs.i686
-)
-
 # Determine the kernel version for which the NVIDIA module should be built.
 KVER="$(rpm -q --qf '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-core | sort -V | tail -n1)"
 
@@ -36,7 +24,16 @@ if ! modinfo -k "${KVER}" nvidia >/dev/null 2>&1; then
 fi
 
 # Install the NVIDIA driver, libraries, utilities, and 32-bit support.
-dnf5 -y install --enablerepo=fedora-nvidia "${packages[@]}"
+dnf5 -y install \
+	--enablerepo=fedora-nvidia \
+	nvidia-driver-cuda \
+	libnvidia-fbc \
+	libva-nvidia-driver \
+	nvidia-driver \
+	nvidia-modprobe \
+	nvidia-persistenced \
+	nvidia-settings \
+	nvidia-driver-libs.i686
 
 # Install the NVIDIA Container Toolkit from its dedicated repository.
 dnf5 -y install --enablerepo=nvidia-container-toolkit nvidia-container-toolkit
