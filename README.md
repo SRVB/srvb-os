@@ -29,7 +29,7 @@ oder aktualisiert werden.
 - NetworkManager, Bluetooth, firewalld (+ firewall-config), fwupd und Power Profiles
 - NVIDIA-Unterstützung über die vorbereiteten Kernel- und Dracut-Konfigurationen
 - Vorinstallierte Flatpak-Anbindung mit Flathub und GNOME-Anwendungen
-- Ghostty-Terminal mit Cursor-Shadern sowie Fish und Starship
+- Ghostty-Terminal mit Fish und Starship
 - Zusätzliche Gaming-/Daily-Driver-Pakete und Flatpaks (u. a. Steam, Lutris, Heroic, OBS)
 - Gaming-Basis mit `steam-devices`, MangoHud, 32-Bit-Mesa-/Vulkan-Treibern und VA-API-GStreamer-Unterstützung
 - Gaming-Optimierungen für `vm.max_map_count`, Split-Lock-Mitigation, Datei-/Memlock-Limits und ZRAM
