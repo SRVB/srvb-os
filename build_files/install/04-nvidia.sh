@@ -11,7 +11,6 @@ dnf5 -y install --enablerepo=fedora-nvidia akmod-nvidia
 # Ensure that the temporary build directory has the expected permissions.
 mkdir -p /var/tmp
 chmod 1777 /var/tmp
-sed -i -e 's/kernel$/kernel-open/g' /etc/nvidia/kernel.conf
 akmods --force --kernels "${KVER}" --kmod nvidia
 depmod -a "${KVER}"
 if ! modinfo -k "${KVER}" nvidia >/dev/null 2>&1; then
