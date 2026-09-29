@@ -24,6 +24,16 @@ dnf5 -y install --enablerepo=fedora-nvidia akmod-nvidia
 mkdir -p /var/tmp
 chmod 1777 /var/tmp
 akmods --force --kernels "${KVER}" --kmod nvidia
+depmod -a "${KVER}"
+if ! modinfo -k "${KVER}" nvidia >/dev/null 2>&1; then
+	echo "NVIDIA kernel module was not installed for ${KVER}" >&2
+	for failed_log in /var/cache/akmods/nvidia/*-for-"${KVER}".failed.log; do
+		if [[ -f "${failed_log}" ]]; then
+			cat "${failed_log}" >&2
+		fi
+	done
+	exit 1
+fi
 
 # Install the NVIDIA driver, libraries, utilities, and 32-bit support.
 dnf5 -y install --enablerepo=fedora-nvidia "${packages[@]}"
