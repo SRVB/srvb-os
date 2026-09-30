@@ -65,6 +65,9 @@ Für spätere Updates genügt:
 sudo bootc upgrade
 ```
 
+Verfügbare Updates werden automatisch vorbereitet. Sie werden erst nach einem
+manuell gestarteten Neustart aktiv; ein automatischer Neustart findet nicht statt.
+
 ## Hinweis zur Verwendung
 
 SRVB OS ist eine persönliche Konfiguration und wird ohne Garantie für jeden
