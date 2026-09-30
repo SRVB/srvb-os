@@ -9,7 +9,6 @@ dnf5 install -y \
 	@multimedia \
 	zram-generator \
 	ublue-os-media-automount-udev \
-	ublue-os-udev-rules \
 	lm_sensors \
 	tuned \
 	tuned-ppd \
