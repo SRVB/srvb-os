@@ -27,9 +27,7 @@ dnf5 install -y \
 	langpacks-de \
 	langpacks-en \
 	plymouth \
-	plymouth-plugin-script \
-	gnome-keyring \
-	gnome-keyring-pam
+	plymouth-plugin-script
 
 systemctl enable srvb-flatpak-preinstall.service
 systemctl enable tuned.service
