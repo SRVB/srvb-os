@@ -22,7 +22,7 @@ dnf install -y \
 	vkBasalt.i686 \
 	vulkan-tools \
 	vulkan-loader.i686 \
-	ghostty
+	kitty
 
 # Install Starship
 curl --retry 3 -fsSL https://starship.rs/install.sh | sh -s -- \
