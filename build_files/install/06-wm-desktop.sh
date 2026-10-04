@@ -3,18 +3,35 @@
 set -euo pipefail
 
 dnf5 install -y \
-	--exclude=toolbox \
-	--exclude=plasma-discover \
-	--exclude=plasma-discover-notifier \
-	--exclude=ark \
-	--exclude=konsole \
-	--exclude=filelight \
-	--exclude=kcharselect \
-	--exclude=kwalletmanager5 \
-	--exclude=kwrite \
-	@kde-desktop
+	--exclude=baobab \
+	--exclude=firefox \
+	--exclude=gnome-calendar \
+	--exclude=gnome-calculator \
+	--exclude=gnome-software \
+	--exclude=gnome-text-editor \
+	--exclude=gnome-characters \
+	--exclude=gnome-classic-session \
+	--exclude=gnome-clocks \
+	--exclude=gnome-color-manager \
+	--exclude=gnome-connections \
+	--exclude=gnome-contacts \
+	--exclude=gnome-font-viewer \
+	--exclude=gnome-logs \
+	--exclude=gnome-maps \
+	--exclude=gnome-weather \
+	--exclude=showtime \
+	--exclude=simple-scan \
+	--exclude=snapshot \
+	--exclude=loupe \
+	--exclude=papers \
+	--exclude=ptyxis \
+	--exclude=decibels \
+	@gnome-desktop \
+	xdg-utils \
+	qt6-qtbase \
+	qt6-qtbase-gui \
+	qt6-qtdeclarative \
+	qt6-qtwayland-adwaita-decoration
 
-dnf5 install -y --enablerepo=copr:copr.fedorainfracloud.org:deltacopy:darkly darkly
-
-systemctl enable plasmalogin.service
+systemctl enable gdm.service
 systemctl set-default graphical.target

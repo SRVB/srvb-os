@@ -9,6 +9,7 @@ dnf5 install -y \
 	@multimedia \
 	zram-generator \
 	ublue-os-media-automount-udev \
+	ublue-os-udev-rules \
 	lm_sensors \
 	tuned \
 	tuned-ppd \
@@ -27,7 +28,9 @@ dnf5 install -y \
 	langpacks-de \
 	langpacks-en \
 	plymouth \
-	plymouth-plugin-script
+	plymouth-plugin-script \
+	gnome-keyring \
+	gnome-keyring-pam
 
 systemctl enable srvb-flatpak-preinstall.service
 systemctl enable tuned.service

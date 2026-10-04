@@ -19,9 +19,6 @@ dnf5 config-manager setopt nvidia-container-toolkit.gpgcheck=1
 dnf5 config-manager addrepo --from-repofile="https://copr.fedorainfracloud.org/coprs/ublue-os/packages/repo/fedora-${FEDORA_VERSION}/ublue-os-packages-fedora-${FEDORA_VERSION}.repo"
 dnf5 config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
 
-dnf5 config-manager addrepo --from-repofile="https://copr.fedorainfracloud.org/coprs/deltacopy/darkly/repo/fedora-${FEDORA_VERSION}/deltacopy-darkly-fedora-${FEDORA_VERSION}.repo"
-dnf5 config-manager setopt copr:copr.fedorainfracloud.org:deltacopy:darkly.enabled=0
-
 dnf5 config-manager addrepo --from-repofile="https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo"
 dnf5 config-manager setopt terra.enabled=0
 dnf5 config-manager setopt terra.priority=100

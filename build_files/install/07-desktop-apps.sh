@@ -8,6 +8,7 @@ dnf install -y \
 	--enablerepo=terra \
 	steam \
 	steam-devices \
+	gnome-disk-utility \
 	libFAudio \
 	libFAudio.i686 \
 	gstreamer1-vaapi \
@@ -22,7 +23,7 @@ dnf install -y \
 	vkBasalt.i686 \
 	vulkan-tools \
 	vulkan-loader.i686 \
-	kitty
+	ghostty
 
 # Install Starship
 curl --retry 3 -fsSL https://starship.rs/install.sh | sh -s -- \
