@@ -17,7 +17,7 @@ Distribution-Konfiguration und erhebt nicht den Anspruch, eine allgemeingültige
 Desktop-Distribution zu sein.
 
 Das Image wird als OCI-Container gebaut und kann direkt mit `bootc` installiert
-oder aktualisiert werden.
+oder aktualisiert werden. Installierte Systeme werden als **SRVB-OS** bezeichnet.
 
 ## Enthalten
 
