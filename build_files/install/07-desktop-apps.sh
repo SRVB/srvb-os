@@ -8,7 +8,6 @@ dnf install -y \
 	--enablerepo=terra \
 	steam \
 	steam-devices \
-	gnome-disk-utility \
 	libFAudio \
 	libFAudio.i686 \
 	gstreamer1-vaapi \

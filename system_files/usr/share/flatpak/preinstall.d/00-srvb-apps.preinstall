@@ -2,11 +2,7 @@
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall app.drey.KeyRack]
-Branch=stable
-IsRuntime=false
-
-[Flatpak Preinstall org.gnome.TextEditor]
+[Flatpak Preinstall org.kde.kwrite]
 Branch=stable
 IsRuntime=false
 
@@ -26,47 +22,43 @@ IsRuntime=false
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.baobab]
+[Flatpak Preinstall org.kde.filelight]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.Calculator]
+[Flatpak Preinstall org.kde.ark]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.Decibels]
+[Flatpak Preinstall org.kde.kwalletmanager]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.Characters]
+[Flatpak Preinstall org.kde.kcalc]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.font-viewer]
+[Flatpak Preinstall org.kde.elisa]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.Logs]
+[Flatpak Preinstall org.kde.kcharselect]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.Papers]
+[Flatpak Preinstall org.kde.konsole]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.Loupe]
+[Flatpak Preinstall org.kde.okular]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall org.gnome.Showtime]
+[Flatpak Preinstall org.kde.gwenview]
 Branch=stable
 IsRuntime=false
 
-[Flatpak Preinstall io.missioncenter.MissionCenter]
-Branch=stable
-IsRuntime=false
-
-[Flatpak Preinstall com.mattjakeman.ExtensionManager]
+[Flatpak Preinstall org.kde.haruna]
 Branch=stable
 IsRuntime=false
 

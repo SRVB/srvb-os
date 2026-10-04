@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  Ein vorkonfiguriertes Fedora-bootc-Image mit GNOME.
+  Ein vorkonfiguriertes Fedora-bootc-Image mit KDE Plasma.
 </p>
 
 ## Überblick
 
 SRVB OS ist ein unveränderliches Desktop-Linux auf Basis von Fedora bootc. Das
-System verwendet GNOME als moderne Wayland-Desktopumgebung und bringt einen
+System verwendet KDE Plasma als moderne Wayland-Desktopumgebung und bringt einen
 persönlich vorkonfigurierten Arbeitsbereich mit. SRVB OS ist eine persönliche
 Distribution-Konfiguration und erhebt nicht den Anspruch, eine allgemeingültige
 Desktop-Distribution zu sein.
@@ -22,13 +22,13 @@ oder aktualisiert werden.
 ## Enthalten
 
 - Fedora bootc als Basis
-- GNOME als Wayland-Desktopumgebung
-- GDM als Anmeldemanager
-- Persönlich vorkonfigurierter GNOME-Desktop
+- KDE Plasma als Wayland-Desktopumgebung
+- Plasma Login Manager als Anmeldemanager
+- Persönlich vorkonfigurierter KDE-Desktop
 - PipeWire und WirePlumber für Audio
 - NetworkManager, Bluetooth, firewalld (+ firewall-config), fwupd und Power Profiles
 - NVIDIA-Unterstützung über die vorbereiteten Kernel- und Dracut-Konfigurationen
-- Vorinstallierte Flatpak-Anbindung mit Flathub und GNOME-Anwendungen
+- Vorinstallierte Flatpak-Anbindung mit Flathub, KDE-Anwendungen und weiteren Apps
 - Ghostty-Terminal mit Fish und Starship
 - Zusätzliche Gaming-/Daily-Driver-Pakete und Flatpaks (u. a. Steam, Lutris, Heroic, OBS)
 - Gaming-Basis mit `steam-devices`, MangoHud, 32-Bit-Mesa-/Vulkan-Treibern und VA-API-GStreamer-Unterstützung
